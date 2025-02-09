@@ -25,6 +25,7 @@
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         text-align: center;
+        width: 300px;
       }
 
       h1 {
@@ -50,7 +51,7 @@
       }
 
       input {
-        width: 80%;
+        width: calc(100% - 24px);
         padding: 10px;
         margin: 10px 0;
         border: 1px solid #ccc;
@@ -78,11 +79,9 @@
       <input type="text" id="airdropInput" placeholder="Enter ID for Airdrop" />
       <a class="link" id="airdropLink" href="#">Airdrop</a>
 
-      <a
-        class="link"
-        href="https://geogel-static.cprvr.wintex.pro/ref?id=234234234234234"
-        >Ref link</a
-      >
+      <input type="text" id="refInput" placeholder="Enter ID for Ref link" />
+      <a class="link" id="refLink" href="#">Ref link</a>
+
       <a
         class="link"
         href="https://geogel-static.cprvr.wintex.pro/?id=234234234234234"
@@ -91,19 +90,30 @@
     </div>
 
     <script>
-      document
-        .getElementById("airdropLink")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          const inputValue = document
-            .getElementById("airdropInput")
-            .value.trim();
-          if (inputValue) {
-            window.location.href = `https://geogel-static.cprvr.wintex.pro/air?id=${encodeURIComponent(inputValue)}`;
-          } else {
-            alert("Please enter a valid ID.");
-          }
-        });
+      function handleDynamicLink(inputId, linkId, baseUrl) {
+        document
+          .getElementById(linkId)
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+            const inputValue = document.getElementById(inputId).value.trim();
+            if (inputValue) {
+              window.location.href = `${baseUrl}${encodeURIComponent(inputValue)}`;
+            } else {
+              alert("Please enter a valid ID.");
+            }
+          });
+      }
+
+      handleDynamicLink(
+        "airdropInput",
+        "airdropLink",
+        "https://geogel-static.cprvr.wintex.pro/air?id=",
+      );
+      handleDynamicLink(
+        "refInput",
+        "refLink",
+        "https://geogel-static.cprvr.wintex.pro/ref?id=",
+      );
     </script>
   </body>
 </html>

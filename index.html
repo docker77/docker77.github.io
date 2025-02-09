@@ -3,20 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
-    <link href="css/style.css" rel="stylesheet" />
+    <title>Geogel Links</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .link {
+        display: block;
+        padding: 12px 20px;
+        margin: 8px 0;
+        text-decoration: none;
+        color: #fff;
+        background: #007bff;
+        border-radius: 8px;
+        transition: 0.3s;
+        font-weight: 600;
+      }
+
+      .link:hover {
+        background: #0056b3;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <a href="https://geogel-static.cprvr.wintex.pro">main route</a>
-    </div>
-
-    <div>
-      <a href="https://geogel-static.cprvr.wintex.pro/open">open</a>
-    </div>
-    <div>
-      <a href="https://geogel-static.cprvr.wintex.pro/?id=234234234234234"
-        >with id</a
+    <div class="container">
+      <h1>Test Links</h1>
+      <a class="link" href="https://geogel-static.cprvr.wintex.pro"
+        >Main Route</a
+      >
+      <a class="link" href="https://geogel-static.cprvr.wintex.pro/open"
+        >Open</a
+      >
+      <a
+        class="link"
+        href="https://geogel-static.cprvr.wintex.pro/?id=234234234234234"
+        >With ID</a
       >
     </div>
   </body>
